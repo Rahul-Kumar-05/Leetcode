@@ -16,21 +16,21 @@ class Solution {
 
         int result = Integer.MAX_VALUE;
         for(int i=1; i<n; i++){
-        //     result = Math.min(result, minutes[i] - minutes[i-1]);
-            int temp = minutes[i] - minutes[i-1];
-            if(temp < result){
-                result = temp;
-            }
+            result = Math.min(result, minutes[i] - minutes[i-1]);
+            // int temp = minutes[i] - minutes[i-1];
+            // if(temp < result){
+            //     result = temp;
+            // }
         }
 
-        // return Math.min(result, 24*60 - minutes[n-1] + minutes[0]);
-        int result2 = 24*60 - minutes[n-1] + minutes[0];
+        return Math.min(result, 24*60 - minutes[n-1] + minutes[0]);
+        // int result2 = 24*60 - minutes[n-1] + minutes[0];
         
-        if(result < result2){
-            return result;
-        }
-        else{
-            return result2;
-        }
+        // if(result < result2){
+        //     return result;
+        // }
+        // else{
+        //     return result2;
+        // }
     }
 }
