@@ -11,9 +11,9 @@ class Solution {
             if(sum == target){
                 ans[0] = start + 1;
                 ans[1] = end + 1;
-                // return ans;
-                start++;
-                end--;
+                return ans;
+                // start++;
+                // end--;
             }
 
             else if(sum > target){
