@@ -3,7 +3,7 @@ class Solution {
         
         int first = Integer.MAX_VALUE;
         int second = Integer.MAX_VALUE;
-        int third = Integer.MAX_VALUE;
+        // int third = Integer.MAX_VALUE;
 
         for(int i=0; i<nums.length; i++){
             int element = nums[i];
@@ -17,7 +17,7 @@ class Solution {
             }
 
             else{
-                third = element;
+                // third = element;
                 return true;
             }
         }
