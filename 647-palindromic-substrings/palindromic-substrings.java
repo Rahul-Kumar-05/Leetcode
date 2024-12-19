@@ -1,14 +1,13 @@
 class Solution {
     public int countSubstrings(String s) {
-        int count = 0;
         int n = s.length();
 
         int dp[][] = new int[n+1][n+1];
-        for(int i=0; i<=n; i++){
-            for(int j=0; j<=n; j++){
-                dp[i][j] = -1;
-            }
+        for(int i=0; i<dp.length; i++){
+            Arrays.fill(dp[i], -1);
         }
+
+        int count = 0;
 
         for(int i=0; i<n; i++){
             for(int j=i; j<n; j++){
@@ -21,8 +20,8 @@ class Solution {
         return count;
     }
 
-    public static boolean check(int i, int j, String s, int[][] dp){
-        if(i>j){
+    public static boolean check(int i, int j, String s, int dp[][]){
+        if(i > j){
             return true;
         }
 
