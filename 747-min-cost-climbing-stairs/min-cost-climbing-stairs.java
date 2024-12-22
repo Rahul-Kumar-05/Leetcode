@@ -8,7 +8,7 @@ class Solution {
             dp[i] = -1;
         }
 
-        return dp[n] = Math.min(solve(cost, n-1, dp), solve(cost, n-2, dp));
+        return Math.min(solve(cost, n-1, dp), solve(cost, n-2, dp));
     }
 
     public int solve(int cost[], int n, int dp[]){
