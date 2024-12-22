@@ -1,18 +1,23 @@
 class Solution {
     public int climbStairs(int n) {
-        
-        if (n<=3){
-            return n;
+        int dp[] = new int[n+1];
+
+        for(int i=0; i<dp.length; i++){
+            dp[i] = -1;
         }
 
-        int a = 3;
-        int b = 2;
+        return helper(n, dp);
+    }
 
-        for(int i=0; i<n-3; i++){
-            a = a+b;
-            b = a-b;
+    public static int helper(int n, int dp[]){
+        if(n <= 1){
+            return 1;
         }
 
-        return a;
+        if(dp[n] != -1){
+            return dp[n];
+        }
+
+        return dp[n] = helper(n-1, dp) + helper(n-2, dp);
     }
 }
