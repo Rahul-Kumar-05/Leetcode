@@ -6,10 +6,10 @@ class Solution {
         int p1 = 0;
         int p2 = 0;
 
-        int n = nums1.length;
-        int m = nums2.length;
+        int n = nums1.length-1;
+        int m = nums2.length-1;
 
-        while(p1 < n && p2 < m){
+        while(p1 <= n && p2 <= m){
 
             if(nums1[p1][0] == nums2[p2][0]){
                 res.add(new int[]{nums1[p1][0], nums1[p1][1] + nums2[p2][1]});
@@ -28,12 +28,12 @@ class Solution {
             }
         }
 
-        while(p1 < n){
+        while(p1 <= n){
             res.add(nums1[p1]);
             p1++;
         }
 
-        while(p2 < m){
+        while(p2 <= m){
             res.add(nums2[p2]);
             p2++;
         }
