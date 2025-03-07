@@ -34,8 +34,9 @@ class Solution {
             int idx = 0;
             int diff = Integer.MAX_VALUE;
             for(int i=1; i<arr.size(); i++){
-                if(arr.get(i) - arr.get(i-1) < diff){
-                    diff = arr.get(i) - arr.get(i-1);
+                int currdiff = arr.get(i) - arr.get(i-1);
+                if(currdiff < diff){
+                    diff = currdiff;
                     idx = i;
                 }
             }
