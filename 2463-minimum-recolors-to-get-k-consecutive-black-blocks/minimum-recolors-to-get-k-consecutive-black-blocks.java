@@ -4,24 +4,23 @@ class Solution {
         int n = blocks.length();
         int minwhite = 0; 
         int white = 0;
-        char[] s = blocks.toCharArray();
 
         for(int i=0; i<k; i++){
-            if(s[i] == 'W'){
+            if(blocks.charAt(i) == 'W'){
                 white++;
             }
         }
         minwhite = white;
 
-        for(int i=k; i<blocks.length(); i++){
-            
-            
-            if(s[i-k] == 'W'){
-                white--;
+        // Sliding window
+        for(int i=k; i<n; i++){
+                        
+            if(blocks.charAt(i-k) == 'W'){
+                white--;          //removes the leftmost 'w'
             }
 
-            if(s[i] == 'W'){
-                white++;
+            if(blocks.charAt(i) == 'W'){
+                white++;          // adds the lastmost 'w'
             }
 
             if(minwhite > white){
