@@ -6,7 +6,11 @@ class Solution {
 
         for(int i=0; i<n; i++){
 
-            if(colors[i] != colors[(i+1)%n] && colors[i] != colors[(i-1+n)%n]){
+            int left = colors[(i-1+n) % n];
+            int middle = colors[i];
+            int right = colors[(i+1) % n];
+            
+            if(middle != left && middle != right){
                 ans++;
             }
         }
