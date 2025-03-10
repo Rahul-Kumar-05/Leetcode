@@ -1,24 +1,24 @@
 class Solution {
 
     public static int helper(String s1, String s2, int n, int m, int dp[][]){
-        if(n == s1.length()){
-            return s2.length()-m;
+        if(n == 0){
+            return m;
         }
-        else if(m == s2.length()){
-            return s1.length()-n;
+        else if(m == 0){
+            return n;
         }
 
         if(dp[n][m] != -1){
             return dp[n][m];
         }
 
-        if(s1.charAt(n) == s2.charAt(m)){
-            dp[n][m] = helper(s1, s2, n+1, m+1, dp);
+        if(s1.charAt(n-1) == s2.charAt(m-1)){
+            dp[n][m] = helper(s1, s2, n-1, m-1, dp);
         }
         else{
-            int insert = 1 + helper(s1, s2, n, m+1, dp);
-            int delete = 1 + helper(s1, s2, n+1, m, dp);
-            int replace = 1 + helper(s1, s2, n+1, m+1, dp);
+            int insert = 1 + helper(s1, s2, n, m-1, dp);
+            int delete = 1 + helper(s1, s2, n-1, m, dp);
+            int replace = 1 + helper(s1, s2, n-1, m-1, dp);
 
             dp[n][m] = Math.min(insert, Math.min(delete, replace));
         }
@@ -39,6 +39,6 @@ class Solution {
             }
         }
 
-        return helper(word1, word2, 0, 0, dp);
+        return helper(word1, word2, n, m, dp);
     }
 }
