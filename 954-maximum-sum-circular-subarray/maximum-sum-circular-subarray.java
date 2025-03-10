@@ -35,9 +35,11 @@ class Solution {
                 curr = 0; 
             }
         }
-        if(maxsum<0){
+
+        if(maxsum < 0){
             return maxsum;
         }
+
         int res = Math.max(maxsum, (total - minsum));
         return res;
     }
