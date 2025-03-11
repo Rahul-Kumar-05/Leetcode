@@ -1,6 +1,9 @@
 class Solution {
     public int maxScore(int[] cardPoints, int k) {
-        
+
+        /*  Mam ka approach   */
+
+
         int lsum = 0;
         int rsum = 0;
 
@@ -20,6 +23,6 @@ class Solution {
             ans = Math.max(ans, lsum + rsum); 
         }
 
-        return ans;
+        return ans;   
     }
 }
