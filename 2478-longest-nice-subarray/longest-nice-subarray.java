@@ -3,7 +3,7 @@ class Solution {
         
         int n = nums.length;
         int mask = 0;
-        int res = 1;
+        int res = 0;
 
         int i = 0; 
         int j = 0;
