@@ -8,7 +8,7 @@ class Solution {
         pascal[0][0] = 1;
 
         for(int i=1; i<numRows; i++){
-            for(int j=0; j<numRows; j++){
+            for(int j=0; j<=i; j++){
                 
                 if(j-1 < 0){
                     pascal[i][j] = pascal[i-1][j];
@@ -22,8 +22,8 @@ class Solution {
         for(int i=0; i<numRows; i++){
             List<Integer> row = new ArrayList<>();
 
-            for(int j=0; j<numRows; j++){
-                if(pascal[i][j] != 0)
+            for(int j=0; j<=i; j++){
+                // if(pascal[i][j] != 0)
                     row.add(pascal[i][j]);
             }
 
