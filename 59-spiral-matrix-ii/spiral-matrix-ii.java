@@ -28,18 +28,22 @@ class Solution {
             right--;
 
             // bottom row : from right to left
-            for(int i=right; i>=left; i--){
-                matrix[bottom][i] = val;
-                val++;
+            if(top <= bottom){
+                for(int i=right; i>=left; i--){
+                    matrix[bottom][i] = val;
+                    val++;
+                }
+                bottom--;
             }
-            bottom--;
 
             // left column : from bottom to top
-            for(int i=bottom; i>=top; i--){
-                matrix[i][left] = val;
-                val++;
+            if(left <= right){
+                for(int i=bottom; i>=top; i--){
+                    matrix[i][left] = val;
+                    val++;
+                }
+                left++;
             }
-            left++;
         }
 
         return matrix;
