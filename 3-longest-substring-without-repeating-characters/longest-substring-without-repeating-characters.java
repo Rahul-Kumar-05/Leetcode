@@ -41,7 +41,6 @@ class Solution {
             while(set.contains(c)){
                 set.remove(s.charAt(left));
                 left++;
-                count--;
             }
 
             set.add(c);
