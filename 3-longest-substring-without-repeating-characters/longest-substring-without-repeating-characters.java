@@ -30,14 +30,13 @@ class Solution {
         HashSet<Character> set = new HashSet<>();
 
         int left = 0;
-        int right = 0;
 
         int max = 0;
         int count = 0;
 
-        for(int i=right; i<s.length(); i++){
+        for(int right=0; right<s.length(); right++){
             
-            char c = s.charAt(i);
+            char c = s.charAt(right);
 
             while(set.contains(c)){
                 set.remove(s.charAt(left));
@@ -46,8 +45,7 @@ class Solution {
             }
 
             set.add(c);
-            right++;
-            count = right - left;
+            count = right - left + 1;
             max = Math.max(max, count);
         }
 
