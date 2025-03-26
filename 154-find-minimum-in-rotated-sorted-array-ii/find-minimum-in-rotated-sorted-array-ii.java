@@ -7,11 +7,11 @@ class Solution {
         while (low < high){
 
             int mid = low + (high - low)/2;
-
+            
+            //3 3 1 3 and 2 2 2 2 2 handeling these test case here
             if(nums[mid] == nums[low] && nums[mid] == nums[high]){
                 low++;
                 high--;
-                continue;
             }
 
             else if(nums[mid] > nums[high]){
