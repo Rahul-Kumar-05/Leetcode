@@ -9,6 +9,7 @@ class Solution {
             ans[indices[i]] = s.charAt(i);
         }
 
+        // return String.valueOf(ans);
         return new String(ans);
     }
 }
