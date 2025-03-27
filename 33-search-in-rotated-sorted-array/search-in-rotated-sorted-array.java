@@ -8,33 +8,35 @@ class Solution {
         // }
         // return -1;
 
-        int start = 0;
-        int end = nums.length-1;
+        int left = 0;
+        int right = nums.length-1;
 
-        while(start <= end){
+        while(left <= right){
 
-            int mid = start + (end - start)/2;
-            
+            int mid = left + (right-left)/2;
+
             if(nums[mid] == target){
                 return mid;
             }
 
-            else if(nums[start] <= nums[mid]){        // if left side is sorted 
-                
-                if(target >= nums[start] && target <= nums[mid]){
-                    end = mid - 1;
+            // if left half is sorted
+            else if(nums[left] <= nums[mid]){
+
+                if(target >= nums[left] && target <= nums[mid]){
+                    right = mid-1;
                 }
                 else{
-                    start = mid + 1;
+                    left = mid+1;
                 }
             }
 
-            else{       // if right side is sorted
-                if(target >= nums[mid] && target <= nums[end]){
-                    start = mid + 1;
+            else{       // if right half is sorted
+
+                if(target >= nums[mid] && target <= nums[right]){
+                    left = mid+1;
                 }
                 else{
-                    end = mid - 1;
+                    right = mid-1;
                 }
             }
         }
