@@ -4,12 +4,12 @@ class Solution {
         int d = 1;
 
         int sum = 0;
-        for(int i=0; i<arr.length; i++){
-            sum = sum + arr[i];
+        for(int i : arr){
+            sum = sum + i;
             
             if(sum > capacity){
                 d++;
-                sum = arr[i];
+                sum = i;
             }
         }
 
@@ -18,8 +18,16 @@ class Solution {
 
     public int shipWithinDays(int[] weights, int days) {
 
-        int minWeight = Arrays.stream(weights).max().getAsInt();
-        int maxWeight = Arrays.stream(weights).sum();
+        // int minWeight = Arrays.stream(weights).max().getAsInt();
+        // int maxWeight = Arrays.stream(weights).sum();
+
+        int minWeight = 0;
+        int maxWeight = 0;
+
+        for(int num : weights){
+            minWeight = Math.max(minWeight, num);
+            maxWeight += num;
+        }
 
         int res = 0;
         while(minWeight <= maxWeight){
