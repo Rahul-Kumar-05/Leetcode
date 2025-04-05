@@ -4,19 +4,16 @@ class Solution {
 
         int index = nums.length-1;
         int c =1;
-        int max = nums[index];
 
-        while(index>0){
-            index--;
-            if(nums[index]!=max){
+       for(int i=nums.length-1; i>0; i--){
+             if(nums[i]!= nums[i-1]){
                 c++;
-                max = nums[index];
-            }
 
-            if(c==3){
-                return nums[index];
-            }
-        }
+                if(c==3){
+                    return nums[i-1];
+                }
+             }
+       }
 
         return nums[nums.length-1];
     }
