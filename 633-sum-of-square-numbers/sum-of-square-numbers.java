@@ -1,6 +1,8 @@
 class Solution {
     public boolean judgeSquareSum(int c) {
-        
+        if(c < 0){
+            return false;
+        }
 
         long start = 0;
         long end = (int)Math.sqrt(c);
