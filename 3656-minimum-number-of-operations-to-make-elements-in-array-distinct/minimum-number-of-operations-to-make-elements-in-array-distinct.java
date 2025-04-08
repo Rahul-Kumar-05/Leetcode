@@ -5,7 +5,7 @@ class Solution {
 
         for(int i=nums.length-1; i>=0; i--){
             if(freq[nums[i]] > 0){
-                return (int) Math.ceil((double)(i + 1)/3);
+                return (i/3) + 1;
             } 
 
             freq[nums[i]]++;
