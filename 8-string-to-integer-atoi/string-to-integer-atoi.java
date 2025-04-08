@@ -54,7 +54,7 @@ class Solution {
             
             return (int)result;
         }
-        catch(Exception c){
+        catch(Exception a){
 
             if(flag){
                 return Integer.MIN_VALUE;
