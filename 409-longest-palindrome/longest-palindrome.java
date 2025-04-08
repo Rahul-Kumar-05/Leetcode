@@ -5,10 +5,10 @@ class Solution {
 
         int odd = 0;
 
-        for(int i=0; i<s.length(); i++){
-            map.put(s.charAt(i), map.getOrDefault(s.charAt(i), 0)+1);
+        for(char c : s.toCharArray()){
+            map.put(c, map.getOrDefault(c, 0)+1);
 
-            if(map.get(s.charAt(i))%2 == 1){
+            if(map.get(c)%2 == 1){
                 odd++;
             }
             else{
