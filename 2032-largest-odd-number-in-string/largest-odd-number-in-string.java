@@ -7,11 +7,11 @@ class Solution {
 
         while(i >= 0){
 
-            if((num.charAt(i) - '0')%2 == 0){
+            if((num.charAt(i))%2 == 0){
                 i--;
             }
             else{
-                break;
+                return num.substring(0, i+1);
             }
         }
 
