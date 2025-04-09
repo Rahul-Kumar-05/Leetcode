@@ -1,32 +1,28 @@
 class Solution {
     public int minOperations(int[] nums, int k) {
+        
+        int freq[] = new int[101];
 
         int same = 0;
         for(int i=0; i<nums.length; i++){
+            freq[nums[i]]++;
+            
             if(nums[i] == k){
-                same++;
-                break;
+                same = 1;
             }
-        }
-        
-        HashSet<Integer> set = new HashSet<>();
 
-        boolean flag = false;
-
-        for(int i=0; i<nums.length; i++){
             if(nums[i] < k){
                 return -1;
             }
+        }
 
-            else if(set.contains(nums[i])){
-                flag = true;
-                continue;
-            }
-            else{
-                set.add(nums[i]);
+        int ans = 0;
+        for(int i=0; i<freq.length; i++){
+            if(freq[i] > 0){
+                ans++;
             }
         }
 
-        return set.size()-same;
+        return ans-same;
     }
 }
