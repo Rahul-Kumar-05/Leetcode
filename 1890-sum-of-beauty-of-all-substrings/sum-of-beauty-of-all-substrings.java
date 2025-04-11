@@ -1,26 +1,26 @@
 class Solution {
 
-    public static int getMax(int arr[]){
-        int max = 0;
+    // public static int getMax(int arr[]){
+    //     int max = 0;
 
-        for(int i=0; i<arr.length; i++){
-            max = Math.max(max, arr[i]);
-        }
+    //     for(int i=0; i<arr.length; i++){
+    //         max = Math.max(max, arr[i]);
+    //     }
 
-        return max;
-    }
+    //     return max;
+    // }
 
-    public static int getMin(int arr[]){
-        int min = Integer.MAX_VALUE;
+    // public static int getMin(int arr[]){
+    //     int min = Integer.MAX_VALUE;
 
-        for(int i=0; i<arr.length; i++){
-            if(arr[i] != 0){
-                min = Math.min(min, arr[i]);
-            }
-        }
+    //     for(int i=0; i<arr.length; i++){
+    //         if(arr[i] != 0){
+    //             min = Math.min(min, arr[i]);
+    //         }
+    //     }
 
-        return min;
-    }
+    //     return min;
+    // }
 
     public int beautySum(String s) {
         
@@ -34,7 +34,20 @@ class Solution {
                 
                 freq[ch[j] - 'a']++;
 
-                int beauty = getMax(freq) - getMin(freq);
+                // int beauty = getMax(freq) - getMin(freq);
+                // sum += beauty;
+
+                int max = 0;
+                int min = Integer.MAX_VALUE;
+
+                for(int k=0; k<freq.length; k++){
+                    max = Math.max(max, freq[k]);
+
+                    if(freq[k] != 0){
+                        min = Math.min(min, freq[k]);
+                    }
+                }
+                int beauty = max - min;
                 sum += beauty;
             }
         }
