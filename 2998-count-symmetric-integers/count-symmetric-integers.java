@@ -4,9 +4,10 @@ class Solution {
         int count = 0;
         for(int i=low; i<=high; i++){
 
-            StringBuilder sb = new StringBuilder();
-            sb.append(i);
-            
+            // StringBuilder sb = new StringBuilder();
+            // sb.append(i);
+            String sb = String.valueOf(i);
+
             int size = sb.length();
             
             if(size%2 != 0){
