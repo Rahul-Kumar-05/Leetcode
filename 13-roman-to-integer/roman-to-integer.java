@@ -3,36 +3,27 @@ class Solution {
 
         switch (ch){
             case 'I':
-                return 1;
-                // break;
+            return 1;
 
             case 'V':
-                return 5;
-                // break;
+            return 5;
 
             case 'X':
-                return 10;
-                // break;
+            return 10;
 
             case 'L':
-                return 50;
-                // break;
+            return 50;
 
             case 'C':
-                return 100;
-                // break;
+            return 100;
 
             case 'D':
-                return 500;
-                // break;
+            return 500;
 
             case 'M':
-                return 1000;
-                // break;
-
-            // default :
-            //     return -1;
+            return 1000;
         }
+        
         return -1;
     }
 
