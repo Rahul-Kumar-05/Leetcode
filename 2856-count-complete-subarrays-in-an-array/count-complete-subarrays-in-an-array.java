@@ -16,7 +16,7 @@ class Solution {
             for(int j=i; j<nums.length; j++){
                 set.add(nums[j]);
 
-                if(set.size() >= distinct){
+                if(set.size() == distinct){
                     count++;
                 }
             }
