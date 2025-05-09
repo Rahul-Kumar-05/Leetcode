@@ -1,17 +1,27 @@
 class Solution {
     public static long countAtmost(int nums[], int val){
 
-        // int i = 0; 
+        int i = 0; 
         int j = nums.length-1;
 
         long count = 0;
 
-        for(int i=0; i<j; i++){
-            while(i<j && nums[i] + nums[j] > val){
+        while(i < j){
+            if(nums[i] + nums[j] > val){
                 j--;
             }
-            count += j-i;
+            else{
+                count += j-i;
+                i++;
+            }
         }
+
+        // for(int i=0; i<j; i++){
+        //     while(i<j && nums[i] + nums[j] > val){
+        //         j--;
+        //     }
+        //     count += j-i;
+        // }
 
         return count;
     }
