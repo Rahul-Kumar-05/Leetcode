@@ -4,15 +4,18 @@ class Solution {
         Arrays.sort(tokens);
 
         int res = 0;
+        int result = 0;
 
         int left = 0;
         int right = tokens.length-1;
 
-        while(left < right){
+        while(left <= right){
             if(tokens[left] <= power){
                 res++;
                 power -= tokens[left];
                 left++;
+
+                result = Math.max(result, res);
             }
 
             else if(res > 0){
@@ -26,10 +29,10 @@ class Solution {
             }
         }
 
-        if(left == right && tokens[left] <= power){
-            res++;
-        }
+        // if(left == right && tokens[left] <= power){
+        //     res++;
+        // }
 
-        return res;
+        return result;
     }
 }
