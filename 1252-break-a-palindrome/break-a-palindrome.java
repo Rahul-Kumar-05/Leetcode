@@ -14,7 +14,7 @@ class Solution {
                 return String.valueOf(arr);
             }
         }
-
+        // if we reach here, there are ONLY 'a' in palindrome string, so we should change the last character to b
         arr[arr.length-1] = 'b';
 
         return String.valueOf(arr);
