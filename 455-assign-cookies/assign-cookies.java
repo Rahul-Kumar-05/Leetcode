@@ -8,23 +8,34 @@ class Solution {
         int m = s.length;
 
         int count = 0;
-        int k = 0;
+        // int k = 0;
 
-        for(int i=0; i<m; i++){
+        // for(int i=0; i<m; i++){
             
-            if(i >= n || k >= m){
-                break;
-            }
+        //     if(i >= n || k >= m){
+        //         break;
+        //     }
 
-            while((k < m-1) && (s[k] < g[i])){
-                k++;
-            }
+        //     while((k < m-1) && (s[k] < g[i])){
+        //         k++;
+        //     }
 
-            if(g[i] <= s[k]){
+        //     if(g[i] <= s[k]){
+        //         count++;
+        //         k++;
+        //     }
+
+        // }
+        int child = 0;
+        int candies = 0;
+
+        while(child < n && candies < m){
+            if(s[candies] >= g[child]){
+                child++;
                 count++;
-                k++;
             }
 
+            candies++;
         }
 
         return count;
