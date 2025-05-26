@@ -22,7 +22,7 @@ class Solution {
         double res = 0;
 
         if(n >= 0){
-            long m = n;
+            long m = (long)n;
             res = getPower(x, m);
         }
         else{
