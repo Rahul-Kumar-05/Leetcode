@@ -16,7 +16,10 @@ class Solution {
 
     public int countGoodNumbers(long n) {
         
-        long res = getpower(5, (n+1)/2)  * getpower(4, n/2);
+        long even = (n+1)/2;
+        long odd = n/2;
+
+        long res = getpower(5, even)  * getpower(4, odd);
 
         res = res % 1000000007;
 
