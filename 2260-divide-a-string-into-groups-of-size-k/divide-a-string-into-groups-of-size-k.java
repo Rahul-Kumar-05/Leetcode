@@ -14,28 +14,45 @@ class Solution {
         String arr[] = new String[size];
 
         int idx = 0;
-        for(int i=0; i<size; i++){
-            if(idx + k > n){
-                StringBuilder sb = new StringBuilder();
-                int j = n-idx;
+        // for(int i=0; i<size; i++){
+        //     if(idx + k > n){
+        //         StringBuilder sb = new StringBuilder();
+        //         int j = n-idx;
 
-                while(j > 0){
+        //         while(j > 0){
+        //             sb.append(s.charAt(idx));
+        //             idx++;
+        //             j--;
+        //         }
+
+        //         int remaining = k - (n % k);
+        //         while(remaining > 0){
+        //             sb.append(fill);
+        //             remaining--;
+        //         }
+
+        //         arr[i] = sb.toString();
+        //         break;
+        //     }
+        //     arr[i] = s.substring(idx, idx+k);
+        //     idx = idx + k;
+        // }
+
+        for(int i=0; i<size; i++){
+            StringBuilder sb = new StringBuilder();
+
+            for(int j=0; j<k; j++){
+                if(idx < n){
                     sb.append(s.charAt(idx));
                     idx++;
-                    j--;
                 }
-
-                int remaining = k - (n % k);
-                while(remaining > 0){
+                else{
                     sb.append(fill);
-                    remaining--;
+                    idx++;
                 }
-
-                arr[i] = sb.toString();
-                break;
             }
-            arr[i] = s.substring(idx, idx+k);
-            idx = idx + k;
+
+            arr[i] = sb.toString();
         }
 
         return arr;
