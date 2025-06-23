@@ -1,10 +1,10 @@
 class NumArray {
-    int nums[];
+    int arr[];
     int bit[];
     int n;
 
     public NumArray(int[] nums) {
-        this.nums = nums;
+        arr = nums;
 
         int n = nums.length; 
 
@@ -27,9 +27,9 @@ class NumArray {
     
     public void update(int index, int val) {
         
-        int diff = val - nums[index];
+        int diff = val - arr[index];
 
-        nums[index] = val;
+        arr[index] = val;
 
         index = index + 1;
 
