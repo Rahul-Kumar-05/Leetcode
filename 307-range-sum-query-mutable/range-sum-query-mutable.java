@@ -28,7 +28,7 @@ class NumArray {
     
     public void update(int index, int val) {
         Rupdate(0, 0, n-1, index, val);    
-        // return;    
+        return;    
     }
 
     public void Rupdate(int idx, int low, int high, int i, int nv){
