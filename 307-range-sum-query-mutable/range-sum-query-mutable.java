@@ -1,11 +1,10 @@
 class NumArray {
-    int arr[];
+    int nums[];
     int bit[];
     int n;
 
     public NumArray(int[] nums) {
-        arr = nums;
-
+        this.nums = nums;
         int n = nums.length; 
 
         bit = new int[n+1];
@@ -27,9 +26,8 @@ class NumArray {
     
     public void update(int index, int val) {
         
-        int diff = val - arr[index];
-
-        arr[index] = val;
+        int diff = val - nums[index];
+        nums[index] = val;
 
         index = index + 1;
 
@@ -46,8 +44,8 @@ class NumArray {
         int res = 0;
 
         while(i > 0){
+            
             res += bit[i];
-
             i = i - (i & (-i));
         }
 
