@@ -1,59 +1,74 @@
 class NumArray {
     int nums[];
-    int bit[];
+    int segt[];
     int n;
 
     public NumArray(int[] nums) {
         this.nums = nums;
-        int n = nums.length; 
+        n = nums.length;
 
-        bit = new int[n+1];
+        segt = new int[4*n];
 
-        for(int i=0; i<nums.length; i++){
-            build(i, nums[i]);
-        }
+        buildTree(0, 0, n-1);
     }
 
-    public void build(int i, int val){
-        i = i+1;
-
-        while(i < bit.length){
-            bit[i] += val;
-
-            i = i + (i & (-i));
+    public void buildTree(int idx, int low, int high){
+        if(low == high){
+            segt[idx] = nums[low];
+            return;
         }
+
+        int mid = low + (high - low)/2;
+
+        buildTree(2*idx+1, low, mid);
+        buildTree(2*idx+2, mid+1, high);
+
+        segt[idx] = segt[2*idx+1] + segt[2*idx+2];
     }
     
     public void update(int index, int val) {
-        
-        int diff = val - nums[index];
-        nums[index] = val;
-
-        index = index + 1;
-
-        while(index < bit.length){
-            bit[index] += diff;
-
-            index = index + (index & (-index));
-        }
+        Rupdate(0, 0, n-1, index, val);    
+        // return;    
     }
 
-    public int range(int i){
-
-        i = i+1;
-        int res = 0;
-
-        while(i > 0){
-            
-            res += bit[i];
-            i = i - (i & (-i));
+    public void Rupdate(int idx, int low, int high, int i, int nv){
+        if(low == high){
+            nums[i] = nv;
+            segt[idx] = nv;
+            return;
         }
 
-        return res;
+        int mid = low + (high-low)/2;
+
+        if(i >= low && i <= mid){
+            Rupdate(2*idx+1, low, mid, i, nv);
+        }
+        else{
+            Rupdate(2*idx+2, mid+1, high, i, nv);
+        }
+
+        segt[idx] = segt[2*idx+1] + segt[2*idx+2];
     }
     
     public int sumRange(int left, int right) {
-        return range(right) - range(left-1);
+        return Rsum(0, 0, n-1, left, right);
+    }
+
+    public int Rsum(int idx, int low, int high, int left, int right){
+        if(low >= left && high <= right){
+            return segt[idx];
+        }
+
+        if(low > right || high < left){
+            return 0;
+        }
+
+        int mid = low + (high-low)/2;
+
+        int lt = Rsum(2*idx+1, low, mid, left, right);
+        int rt = Rsum(2*idx+2, mid+1, high, left, right);
+
+        return lt + rt;
     }
 }
 
