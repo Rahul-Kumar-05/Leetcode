@@ -11,7 +11,7 @@ class Solution {
 
         for(int key : map.keySet()){
             if(map.get(key) == key){
-                lucky_number = key;
+                lucky_number = Math.max(key, lucky_number);
             }
         }
 
