@@ -10,8 +10,8 @@ class FindSumPairs {
 
         map = new HashMap<>();
 
-        for(int val : nums2){
-            map.put(val, map.getOrDefault(val, 0) + 1);
+        for(int i=0; i<nums2.length; i++){
+            map.put(nums2[i], map.getOrDefault(nums2[i], 0) + 1);
         }
     }
     
