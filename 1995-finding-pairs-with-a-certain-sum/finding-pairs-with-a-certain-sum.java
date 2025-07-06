@@ -34,8 +34,8 @@ class FindSumPairs {
         
         int count = 0;
 
-        for(int num : nums1){
-            int diff = tot - num;
+        for(int i=0; i<nums1.length; i++){
+            int diff = tot - nums1[i];
 
             count += map.getOrDefault(diff, 0);
         }
