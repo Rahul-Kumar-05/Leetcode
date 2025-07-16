@@ -9,21 +9,21 @@ class Solution {
             dp[i] = -1;
         }
 
-        return robFrom(nums, n-1, dp);
+        return robFrom(nums, 0, n-1, dp);
     }
 
-    public static int robFrom(int nums[], int i, int dp[]){
-        if(i < 0){
+    public static int robFrom(int nums[], int start, int end, int dp[]){
+        if(start > end){
             return 0;
         }
 
-        if(dp[i] != -1){
-            return dp[i];
+        if(dp[start] != -1){
+            return dp[start];
         }
 
-        int rob = nums[i] + robFrom(nums, i-2, dp);
-        int skip = robFrom(nums, i-1, dp);
+        int rob = nums[start] + robFrom(nums, start+2, end, dp);
+        int skip = robFrom(nums, start+1, end, dp);
 
-        return dp[i] = Math.max(rob, skip);
+        return dp[start] = Math.max(rob, skip);
     }
 }
