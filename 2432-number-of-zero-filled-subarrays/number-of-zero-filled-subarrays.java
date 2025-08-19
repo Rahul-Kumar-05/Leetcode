@@ -13,7 +13,7 @@ class Solution {
 
         for(int i=0; i<nums.length; i++){
            
-            int no_of_zeroes = 0;
+            long no_of_zeroes = 0;
 
             if(nums[i] == 0){
 
@@ -29,7 +29,8 @@ class Solution {
             }
 
             if(no_of_zeroes > 0){
-                res += count(no_of_zeroes);
+                // res += count(no_of_zeroes);
+                res += (no_of_zeroes * (no_of_zeroes + 1)) / 2;  // n(n+1)/2
             }
         }
 
