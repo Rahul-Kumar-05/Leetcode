@@ -14,7 +14,7 @@ class Solution {
 
             if(nums[i] == 0){
                 count++;
-                continue;
+                // continue;
             }
             else{
                 product2 = product2 * nums[i];
