@@ -10,6 +10,19 @@ class Solution {
         }
     }
 
+    public static boolean containsZero(int num){
+
+        while(num > 0){
+            int ld = num % 10;
+
+            if(ld == 0) return false;
+
+            num = num / 10;
+        }
+
+        return true;
+    }
+
     public int[] getNoZeroIntegers(int n) {
         
         int left = 0; 
@@ -21,7 +34,7 @@ class Solution {
             left = i;
             right = n - left;
 
-            if(ContainsZero(left) && ContainsZero(right)){
+            if(containsZero(left) && containsZero(right)){
                 
                 res[0] = left;
                 res[1] = right;
