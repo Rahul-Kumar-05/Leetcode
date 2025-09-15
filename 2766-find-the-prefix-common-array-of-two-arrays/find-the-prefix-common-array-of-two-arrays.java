@@ -14,8 +14,8 @@ class Solution {
 
                 temp[i] = res;
 
-                setA.add(A[i]);
-                setB.add(B[i]);
+                // setA.add(A[i]);
+                // setB.add(B[i]);
 
                 continue;
             }
