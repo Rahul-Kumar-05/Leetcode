@@ -7,12 +7,13 @@ class Solution {
         int id = 0;
 
         for(int i : groupSizes){
-            
+
             if(!map.containsKey(i)){
                 map.put(i, new ArrayList<>());
             }
 
-            map.get(i).add(id++);
+            map.get(i).add(id);
+            id++;
 
             if(i == map.get(i).size()){
                 res.add(map.get(i));
