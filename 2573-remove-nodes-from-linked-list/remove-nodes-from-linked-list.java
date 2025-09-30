@@ -23,16 +23,16 @@ class Solution {
 
         temp = head;
 
-        int j=0;
+        int i=0;
         while(temp != null){
-            nums[j] = temp.val;
-            j++;
+            nums[i] = temp.val;
+            i++;
             temp = temp.next;
         }
 
         Stack<Integer> st = new Stack<>();
 
-        for(int i=length-1; i>=0; i--){
+        for(i=length-1; i>=0; i--){
            
             if(st.isEmpty() || nums[i] >= st.peek()){
                 st.push(nums[i]);
