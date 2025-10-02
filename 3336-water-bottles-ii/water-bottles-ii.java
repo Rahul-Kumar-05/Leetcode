@@ -3,9 +3,9 @@ class Solution {
 
         int drunk = numBottles;
         int empty = numBottles;
-        int full = 0;
 
         while(empty >= numExchange){
+            int full = 0;
 
             while(empty >= numExchange){
                 full++;
@@ -15,7 +15,6 @@ class Solution {
 
             drunk += full;
             empty += full;
-            full = 0;
         }
 
         return drunk;
