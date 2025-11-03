@@ -1,0 +1,1 @@
+<h2>minimum-time-to-make-rope-colorful Notes</h2><hr>[ Time taken: 9 hrs 55 m 43 s ]
