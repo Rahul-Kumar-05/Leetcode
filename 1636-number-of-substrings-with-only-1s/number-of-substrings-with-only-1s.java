@@ -22,7 +22,7 @@ class Solution {
                 }
             }
 
-            res += solve(count) % mod;
+            res += solve(count);
         }
 
         return (int)(res % mod);
